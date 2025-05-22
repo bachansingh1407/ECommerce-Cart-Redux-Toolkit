@@ -1,0 +1,261 @@
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #6366f1;
+    --accent-color: #ec4899;
+    --light-bg: #f9fafb;
+    --dark-text: #111827;
+    --light-text: #6b7280;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+}
+
+/* AddCart.jsx */
+.container {
+    width: 90%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .header h2 {
+    font-size: 1.2rem;
+}
+
+.container .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Product.jsx */
+.container .grid .product-card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: var(--card-bg);
+    border-radius: 4px;
+}
+
+.container .product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.container .grid .product-card .product-info {
+    padding: 0.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.product-card .product-info h2 {
+    font-size: 1.2rem;
+
+}
+
+.product-card .product-info p {
+    font-size: 0.8rem;
+}
+
+.product-card .product-info p span {
+    padding: 1px 4px;
+    background-color: var(--accent-color);
+    color: var(--card-bg);
+    border-radius: 6px;
+}
+
+.product-card .product-info strong {
+    font-weight: 400;
+}
+
+.product-card .product-info button {
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: var(--card-bg);
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* Cart.jsx */
+
+.empty-cart {
+    width: 100%;
+    min-height: 50vh;
+    display: grid;
+    place-items: center;
+    text-align: end;
+}
+
+.empty-cart p {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.cart-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.cart-items .cart-card{
+    display: flex;
+    gap:0.5rem;
+    background: var(--card-bg);
+    padding: 0.4rem;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cart-items .cart-img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.cart-card .cart-info{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.cart-card .cart-info .cart-brand{
+    color: var(--primary-color);
+}
+.cart-card .cart-info .cart-price{
+    font-weight: 600;
+}
+.cart-card .cart-info .qty-controls{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.cart-card .cart-info .qty-controls button{
+    border: none;
+    background-color: var(--primary-color);
+    font-weight: 600;
+    color: var(--card-bg);
+    padding:1px 10px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+}
+.cart-card .cart-info .qty-controls span{
+        font-weight: 600;
+    }
+.cart-card .cart-info .remove-btn,
+.cart-summary button{
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--accent-color);
+    color: var(--card-bg);
+    font-size: 0.8rem;
+}
+
+.cart-summary{
+    background-color: var(--card-bg);
+    padding: 0.5rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-summary h3{
+    color: var(--accent-color);
+}
+.cart-summary p span{
+    font-weight: 600;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .cart-items {
+        grid-template-columns: 1fr; /* stack cards on smaller screens */
+        padding: 0 1rem;
+    }
+
+    .cart-items .cart-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-items .cart-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .cart-card .cart-info {
+        width: 100%;
+        padding: 0.5rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cart-card .cart-info .qty-controls {
+        justify-content: center;
+    }
+
+    .cart-card .cart-info .remove-btn {
+        align-self: center;
+    }
+
+    .cart-summary {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .container .header h2 {
+        font-size: 1rem;
+    }
+
+    .empty-cart p {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card .product-info button,
+    .cart-card .cart-info .qty-controls button,
+    .cart-card .cart-info .remove-btn,
+    .cart-summary button {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .cart-summary p {
+        font-size: 0.9rem;
+    }
+
+    .product-card .product-info h2,
+    .cart-card .cart-info .cart-brand {
+        font-size: 1rem;
+    }
+}
