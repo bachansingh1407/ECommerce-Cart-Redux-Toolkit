@@ -8,8 +8,8 @@ A modern **ecommerce cart application** built using **React** and **Redux Toolki
 
 ## 📸 Preview
 
-![Add to Cart ](https://github.com/bachansingh1407/ECommerce-Cart-Redux-Toolkit/Add to Cart using Redux.png)  
-![Cart Page ](./Cart Page.png) 
+![Add to Cart ](https://github.com/bachansingh1407/ECommerce-Cart-Redux-Toolkit/AddToCartUsingRedux.png)  
+![Cart Page ](./CartPage.png) 
 
 ---
 
