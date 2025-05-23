@@ -74,7 +74,7 @@ Follow these steps to run the project locally:
 ### 1. Clone the Repo
 
 ```bash
-git clone [https://github.com/your-username/ecommerce-cart-redux-toolkit.git](https://github.com/bachansingh1407/ECommerce-Cart-Redux-Toolkit/)
+git clone https://github.com/bachansingh1407/ECommerce-Cart-Redux-Toolkit
 cd client
 ````
 
